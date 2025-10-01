@@ -9,11 +9,19 @@ def generate_password(length):
 
     # Combine all characters
     all_characters = letters + digits + symbols
-    print(all_characters)
-    print(secrets.choice(all_characters))
+
+    password = ''
+
+    # Generate password
+
+    for _ in range(length):
+        password += secrets.choice(all_characters)
+
+    return password
 
 def main():
-    generate_password()
+    new_password = generate_password(8)
+    print(new_password)
 
 if __name__ == '__main__':
     main()
